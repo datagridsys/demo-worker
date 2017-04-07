@@ -26,7 +26,7 @@ node {
             git_branch = sh(returnStdout: true, script: 'git rev-parse HEAD | ' +
                 'git branch -a --contains | grep remotes | sed s/.*remotes.origin.//').trim()
         } catch (e) {
-            notify_fail("$image_name repo checkout")
+            notify_fail("$image_name git repo checkout")
             throw e
         }
 

@@ -8,7 +8,6 @@ node {
         slackSend color: "$co", message: "$msg: branch `${git_branch}`, commit " +
             "`${short_commit}`, job `${env.BUILD_TAG}` <${env.BUILD_URL}|Details>",
             tokenCredentialId: 'demo-slack'
-            //@@FIXME:  set new credential for demo-slack-worker
     }
     def notify_fail = { msg -> notify('danger', "*FAILED* $msg") }
     def notify_pass = { msg -> notify('good', "PASSED $msg") }
@@ -56,5 +55,5 @@ node {
     }
 
     // notify of success
-    notify_pass("$image_name build and push")
+    notify_pass("$image_name image build and push")
 }

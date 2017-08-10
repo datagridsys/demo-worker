@@ -4,7 +4,7 @@ CONTAINER_NAME=demo-worker
 		push
 
 image:
-	docker build -f Dockerfile -t datagridsys/${CONTAINER_NAME} .
+	docker build -f Dockerfile -t opsani/${CONTAINER_NAME} .
 
 push:
-	docker push datagridsys/${CONTAINER_NAME}:latest
+	docker push opsani/${CONTAINER_NAME}:latest
